@@ -1,0 +1,208 @@
+Programação Orientada a Objetos
+=================================
+
+* Histórico de orientação a objetos
+    - Simula67 (anos 60 na Noruega)
+        - Usada para simulação de navios, cada objeto era responsável 
+          por seus dados e comportamento
+    - Smalltalk(década de 70) no Xerox PARC
+        - Linguagem dinâmica, com classes, objetos, métodos, herança
+    - Extensões ao LISP (década de 70) 
+        - Incorporou os conceitos de orientação a objetos
+    - C++ (década de 1990)
+        - Popularizou a POO fazendo dela uma estenção ao C
+
+* Conceitos básicos
+    - Objetos
+    - Classe conceitual (comportamento da classe)
+    - Classe de software (implementação do tipo)
+     
+                    .-----------.       . Carro 3
+                    | Carro     |      /
+                    |===========|     /-- Carro 2
+                    | placa     |    /
+                    | cor       | --o---- Carro 1
+                    |-----------|    \
+                    | licensiar |     \-- Carro 4
+                    | dirigir   |      \
+                    '-----------'       ' Carro 5
+                          |         }
+                  .______/ \______. } Herança
+                  |      `'´      | }
+            .-----------.   .------------.
+            | Esportivo |   | Utilitário |
+            |===========|   |============|
+            | Aerofólio |   | Tamanho    |
+            '-----------'   '------------'
+    
+    - Modelagem
+        - Com o objetono mundo real, cria-se uma classe conceitual, com
+          os atrivutos e aões relevantes. Cria-se, então,umaclasse de
+          software, que apresenta a implementação do conceito. 
+        - Cada classe pode ser INSTANCIADA, criando novos objetos
+          daquela classe.
+        - Modelar um sistema orientado a objetos é definir quais os
+          objetos existentes e a forma como eles interagem.
+    
+    - Atributo x valor de atributo
+        - Um atributo é um tipo de dado relavante à classe. Ele pode
+          ou não ter tipos, dependendo da linguagem.
+        - Um VALOR de atributo é o valor concreto de um dado atributo.
+        
+    - Operação x método
+        - Uma operação é a definição do comportamento de uma classe.
+        - O método é UMA implementação de uma operação.
+        - Genericamente, poderíamos dizer que a operação é O QUE a
+          classe faz, e o método, COMO faz.
+
+    - Mensagem
+        - Uma mensagem é o ato de fazer uma CHAMADA de um método, em que
+          realiza-se a comunicação entre objetos.
+
+* Implementação de POO em Java
+    - Operadores de acesso: definem a visibilidade de um método
+        - public:    acessível fora do pacote
+        - private:   acessível apenas dentro da classe
+        - protected: acessível às classes filhas
+        - "friendly" (padrão): acessível a outras classes do pacote
+    
+    - Declaração de método e assinatura
+        - public int nome(int a, int b)
+          ^^^^^^ ^^^ ^^^^ ^^^^^^^^^^^^
+             |    |   |    parâmetros       } assinatura
+             |    |   '--- nome do método   } do método
+             |    '------- valor de retorno
+             '------------ acesso
+    
+    - Chamada em estilo procedural x estilo OO
+        - Procedural:
+            String str = "A casa é amarela";
+            String.substring(str,posIni,posFinal);
+            // Função de uma biblioteca de funções (String) que executa
+            // alguma ação, via chamada de função/procedimento
+        
+        - Orientado a objetos:
+            String str = "A casa é amarela";
+            str.substring(posIni,posFinal);
+            // Método da classe que realiza uma ação sobre si
+
+    - Relacionamentos
+        - Assim como em BD, há relacionamentos entre objetos
+        - Eles são implementados colocando uma referência a um 
+          objeto da classe relacionada dentro da classe que realiza
+          a ação.
+            
+            .-----------.           .-----------. : class Mulher
+            | Mulher    |           | Homem     | : {
+            |===========| casamento |===========| :   String nome;
+            | nome      |-----------| nome      |-:   Homem marido;
+            | dataNasc  |           | dataNasc  | :   Date dataNasc;
+            |-----------|           |           | :   
+            | casar     |           |           | :   public void
+            '-----------'           '-----------' :   casar(Homem h)
+                                                  :   { ... }
+                                                  : }
+        
+        - A forma de BD não seria na forma orientada a objetos:
+            
+             Motorista        :  Carro                 :
+           -------------------:------------------------:----------------
+            .----.-------.    : .----.-------.-------. :
+            | Id | Nome  |    : | Id | Cor   | IdMot | :
+            |----|-------|    : |----|-------|-------' :   MER
+            |  1 | José  |    : |  1 | Preto |     2 | :
+            |  2 | Pedro |    : |  2 | Azul  |     1 | :
+            '----'-------'    : '----'-------'-------' :
+           -------------------:------------------------:----------------
+            class Motorista   : class Carro            : POO-MER
+            {                 : {                      : Viola o encap-
+              int id;         :   String placa;        : sulamento (mo-
+              String nome;    :   String cor;          : difica Motoris-
+            }                 :   int idMotorisca;     : ta leva a mudar
+                              : }                      : Carro)
+           -------------------:------------------------:----------------
+            class Motorista   : class Carro            : POO puro
+            {                 : {                      : Não viola mais
+              int id;         :   String placa;        : o encapsulamen-
+              String nome;    :   String cor;          : to, pois só 
+            }                 :   List<Motorista> lm;  : tem referências
+                              : }                      :
+        
+* Herança
+    - Forma de usar código,criando uma hierarquia de classes
+    - Pode ser simples (um único pai) ou múltiplo (vários pais)
+    - Herança múltipla geralemente não é implementada, porque é
+      um problema.
+        
+                 class A       :  class F1 class F2
+                    ^          :      ^       ^
+                   / \         :       \     /
+            class B   class C  :       class S
+        -----------------------:-----------------------
+             Herança simples   :  Herança múltipla
+    
+    - Problemas de Herança múltipla
+        
+            class A  class B   :       class A
+            =======  =======   :          ^ 
+            x        x         :         / \
+            y        y         :  class B   class C
+               ^        ^      :        ^   ^
+                \      /       :         \ /
+                 class C       :       class D
+        -----------------------:-----------------------
+            Colisão de nomes   :   Herança repetida 
+
+* Polimorfismo
+    - Habilidade de tomar várias formas (estar sob várias interfaces)
+        
+          Motorista            dirige       Automóvel
+          ==================== ---------->  ================
+          --------------------              velocidade
+          dirigir(Automóvel a)              marchaAtual
+                                            temperaturaDoMotor
+                                            ------------------
+                                            acelerar()
+                                            frear()
+                                                     |        
+                                        {    .______/ \______.
+          Todo Fusca, Kombi e Gol pode  {    |      `|´      |
+          ser tratado como um Automóvel { Fusca    Kombi    Gol
+          genérico, via sua interface   { =====    =====    ===
+                                        { -----    -----    ---
+    
+    - Exemplo:
+
+                           Figura
+                           ================
+                           ----------------
+                           preencher(Cor c)
+                                   ^
+                                   |        
+             .____________________/ \___________________.
+             |                    `|´                   |
+             ^                     ^                    ^
+      Círculo              Quadrado             Triângulo
+      ================     ================     ================
+      ----------------     ----------------     ----------------
+      preencher(Cor c)     preencher(Cor c)     preencher(Cor c)
+        
+        metodo(Figura f) {    : Triangulo t = new Triangulo();
+            ...               : metodo(t);
+            f.preencher(cor); : // Esse ponto se torna um PONTO DE
+            ...               : // EXTENSÃO, que pode ter mais classes
+        }                     : // adicionadas sem modificar o código
+                              : // de "metodo". Fica simples usá-los em
+                              : // códigos preparados para tratar da 
+                              : // super classe.
+
+* Operações e classes abstratas
+    - Uma classe abstrata não pode instancir objetos.
+    - Tem alguma operação não implementada (que é sobrecarregada pelas
+      subclasses).
+    - Serve basicamente para o polimorfismo.
+
+* Interface
+    - Todas as operaçãos não são implementadas.
+    - Simula a herança múltipla (em termos de polimorfiscmo) pois não
+      padece dos mesmos problemas.

@@ -1,0 +1,100 @@
+Engenharia de Software
+========================
+
+* O que é engenharia?
+    - Aplicar os conhecimentos científicos à invenção
+    - Aplicação de métodos científicos e empíricos
+    - Arte, ciência e técnica de conjugar os conhecimentos
+      especializados
+
+* Diferenças de engenharias para engenharia de software
+    - A egenharia de software é muito mais flexível, pois há a     
+      possibilidade de criarmos apenas um mínimo, testá-lo, e depois 
+      evoluí-lo
+    - A engenharia de software tem mais dificuldades, pois lida com 
+      uma área muito mais abrangente e escopos de aplicação bem maiores.
+
+* A engenharia de software é para a computação o que a química é para 
+  a engenharia química: uma aplicação de conhecimentos científicos e 
+  empíricos para resolver problemas reais.
+
+* Em um sistema computacional, o conjunto dos componentes que não fazem
+  partedo equipamento físico propriamente dito e que incluem as 
+  instruções e programas (e os dados a eles associados) empregados 
+  durante a utilização do sistema.
+
+* Software é um artefato abstrato
+    - A construção de software requer novação na engenharia, que se
+      desenvolveu considerando eminentemente artefatos concretos.
+    - Qual é o custo de matéria-prima no desenvolvimento de software?
+      Virtualmente, 0. O custo não está na construção, mas no design
+      do programa.
+    - Como esse custo se diferencia dos custos de mão de obra?
+      A mão de obra é o custo principal, pois envolve principalmente 
+      a atividade intelectual. A criação, em si, envolve apenas fazer
+      uma compilação.
+
+* Projetos de software podematingir grandes proporções
+    - A complixidade do projeto (design, construçõa, gerenciamento)
+      cresce "exponencialmente" com as dimensões do projeto:
+      - Desenvolvedores - pode chegar a centenas, ou pode ser um 
+        projeto aberto
+      - Linhasde código - pode chegar a muitos milhões
+      - Usuários - pode chegar a milhões
+      - Demandas - alta confiabilidade (missão crítica), vida linga,
+        segurança, adequação, interoperabilidade, conformidade,
+        usabilidade, atratividade, eficiência, eficácia,
+        manutenibilidade, portabilidade, etc.
+
+* O que é engenharia de software? (≠ desenvolvimento de software)
+    - Funciona independentemente da diferença de engenharia da
+      computação, ciência da computação e sistemas da informação.
+      O importante é apenas a existências de softwares.
+    - O termo foi cunhado numa conferência em 1968, para estabelecer
+      técnicas que pudessem aumentar a velocidade do desenvolvimento
+      de softwares, com técnicas mais padronizadas.
+
+* O que é uma solução boa?
+    - Atende aos requisitos.
+    - Relação custo x benefício.
+    - Evitar o overkill.
+    - ISO 9126 (define qualidade interna e extenade um software).
+
+* Competências da Engenharia de software
+    - Matemática e ciência da computação
+    - Economia
+    - Administração
+    - Psicologia
+    - Sociologia
+    - Pedagogia
+    
+    .-----------------------------------------------.
+    |                Engenharia de software         |
+    |                    ↓           ↓              |
+    |                 Teorias    Ferrementas        |
+    |                     ↘         ↙               |
+    | Cliente → Problema → Engenheiro  → solução em |
+    |                      de software    software  |                   |
+    '-----------------------------------------------'
+          Workflow desenvolvimento de software
+
+* Qual a atividade de maior custo?
+    - Atualmente, omais complicado é a MANUTENÇÃO.
+    - O código precisa ser atualizado (por novas versões de SO,
+      linguagens, requisitos, etc).
+    - No desenvolvimento, tenta-se criar um software que facilite
+      a manutenção/evolução.
+
+* Desenvolvimento x manutenção
+    
+    Engenharias:            desgaste demanda manutenção
+    Engenharia de software: deterioração demanda manutenção
+                            (mudanças de tecnologias e requisitos)
+
+* Com o passar do tempo, houve um ciclo de crescimento e decrescimento
+  da Engenharia de Software. Em algum ponto, o uso de documentação e
+  planejamentos (comuns a outros tipos de engenharia) não estava
+  melhorando a qualidade dos sistemas. O surgimento dos métodos ágeis
+  foram um bom contraponto no sentido de software como não-engenharia.
+  A tendência é que haja uma estabilização, em que se use os dois 
+  movimentos em equilíbrio.

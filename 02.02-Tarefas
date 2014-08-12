@@ -1,0 +1,10 @@
+* para a próxima aula
+    - Criar um projeto Java na IDE Eclipse com o modelo de classes
+      mostrado
+    - Regras:
+        - Vendedores recebem comissão sobre suas vendas do mÊs, além do
+          salário base.
+        - Secretárias têm 5% de bônus SOBRE O SALÁRIO BASE a cada 2 anos
+          de tempo de casa, limitado a 25%.
+        - A operação calculaValorFlohPgto() calcula o valor total da
+          golha de pagamento para o mês atual.
