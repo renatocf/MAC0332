@@ -1,0 +1,45 @@
+CICLOS DE DESENVOLVIMENTO
+===========================
+
+* Ciclo em cascata
+    - Métodos orientados ou planos
+    - Acontece em um processo de etapas BEM definidas. Pode ser 
+      muito longo - o que costuma ser ruim, pois necessidades 
+      MUDAM ao longo do tempo, e ao entregar o software, ele pode
+      já não atender aos requisitos iniciais.
+    
+    - Etapas do ciclo em cascata
+        - Levantamento   || O processo tem vantagens de ter
+          de requisitos  || uma visão do todo oantes de 
+        - Análise        || começar a próxima etapa. O 
+        - Projeto        || acompanhamento é mais simples,
+        - Construção     || e é possível fazer especializações
+        - Entrega        || a cada etapa. Esse processo, porém,
+        - Manutenção     || pode ser muito amarrado.
+        - Retirada       \/ 
+
+* Ciclo iterativo
+    - Métodos ágeis
+    - Funciona na forma de uma espiral ascendente, com ciclos menores de
+      desenvolvimento que repretem o processoem cascata várias vezes. A
+      cada iteração, novas funcionalidades são adicionadas.
+    
+                    .----------------------------------.
+                    |          projeto                 |
+                    |         .--------.               |
+                    |         | .---.  |               |
+                    | análise | | . |  | implementação |
+                    |         | '-' |  |               |
+                    |         '-----'  |               |
+                    |        requisito |               |
+                    '------------------'               |
+                                 entrega               |
+                ... -----------------------------------'
+    
+    - Esse tipo de desenvolvimento é voltado para o movimento ágil, que
+      tem por princípio fazer com que o cliente faça tudo aos poucos.
+
+* Alternativas mistas
+    - Atualmente, usa-se um misto entre as duas maneiras, aproximando-se
+      mais de uma ou outra abordagem conforme a necessidade.
+    - Uma técnica possível é a RUP, mistura de ambas

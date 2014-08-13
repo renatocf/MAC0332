@@ -1,0 +1,78 @@
+REQUISITOS
+============
+
+* Os requisitos são funcionalidades/necessidades que um cliente ou outra
+  pessoa que possa impor restrições ao software (stakeholders) exigem
+  que o software implemente e atenda.
+* Existem dois tipos de requisitos
+    - Funcionais: 
+        O QUE o software deve fazer, conforme pedido pelos stakeholders.
+    - Não funcionais:
+        Exigências que não são aparentes, como velocidade do software,
+        tempo de resposta, bancos de dados usados, portabilidade,
+        segurança, etc.
+
+* Etapas do levantamento de requisitos
+    - Elicitação: coleta e descoberta de requisitos a partir dos
+      stakeholders (envolvidos) e outras fontes.
+    
+    - Análise: entendimento mais rico e preciso de cada requisito 
+      e suas conexões. Tem várias subetapas, que geram uma série de
+      documentos:
+        - Entrevista  (Conversa com vários clientes + transcrição)
+        - Observação  (Visita ao local a ser automatizado, ou observações
+                       ao que acontece)
+        - Grupo local (Reunião entre os membros da equipe para discutir
+                       sobre o software)
+        - Experimento simulado
+    
+    - Especificação 
+        - Registro dos requisitos de forma persistente e prganizada, de
+          modo a facilitar a comunicação e o gerenciamento de mudanças
+    
+    - Validação: confirmação se os requisitos realmente atendem ao que
+      está sendo pedido
+    
+    - 
+
+* Requisitos não-funcionais segundo ISO 9126
+    - Confiabilidade, corretude, manutenabilidade, performance, 
+      interoperabilidade, eficência, usabilidade, legibilidade, 
+      reusabilidade, compatibilidade, portabilidade, segurança, etc.
+    - Onde cada um dos requisitos é crucial? Onde é dispensável?
+      Como obter no software?
+    - Qual o requisito não-funcioanl amis importante para cada um dos
+      tipos de sistemas abaixo?
+        - Sistema interativo, sistema em lote, sistema de tempo real, 
+          sistema Web, sistema bancário, sitemas de missão crítica
+    - Trade-offs entre os requisitos
+
+* Requisitos segundo FURPS+
+    - Funcionais: 
+        Características e capacidades do sistema;
+    - Usabilidade: 
+        Fatores humanos, recursos de ajuda e documentação;
+    - Confiabilidade: 
+        Frequência de falhas, capacidade de recueração e
+        precisibilidade.
+    - Desempenho:
+        Tempo de resposta, disponibilidade e uso de recursos.
+    - Facilidade de suporte:
+        Facilidade de adaptação e de manutenção, internacionalização e
+        confiabilidade.
+    - Implementação:
+        Limitação de recursos, linguagens e ferramentas, linguagem
+    - Interface:
+        Restrições impostas pelas interfaces com sistemas externos.
+    - Operações:
+        Gerenciamento do sistema no ambiente operacional.
+    - Questões legais:
+        Licensas de uso, etc.
+
+* Entendimento do domínio de aplicação
+    - É importante usar a terminologia correta ao se comunicar com
+      clientes e usuários.
+    - Emprego de palavras inapropriadas pode lear a desentendimento.
+    - Criação de um GLOSSÁIO com uma lista de termos técnicos utilizados
+      na área em questão.
+    - Criação de um mapa conceitual.
