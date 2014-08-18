@@ -1,0 +1,131 @@
+Casos de uso de levantamentos de requisito
+============================================
+
+* Ivar Jacabson (inventor do UML) definiu "casos de uso" no final dos
+  anos 60 para apoiar seu trabalho e apresentou à comunidade de
+  orientação a objetor no final dos anos 80.
+* Narrativas que mostram como usar o sistema para atingir determinados
+  objetivos.
+* Para definir quais são os casos de uso deve-se identificar que os
+  usuários fazem (pou preciam fazer) com o sistema.
+* Definem-se os ATORES do sistema e as ações que eles realizam.
+    
+        .===============.===============================.
+        :    Atores     : Casos de uso                  :
+        :===============:===============================:
+        :      ()       : - Consultar disponibilidade   :
+        :     /||\      : - Registrar aula dada         :
+        :      /\       : -                             :
+        :   Professor   :                               :
+        :               :                               :
+        :      ()       : -                             :
+        :     /||\      : -                             :
+        :      /\       :                               :
+        :    Aluno      :                               :
+        :               :                               :
+        :      ()       : -                             :
+        :     /||\      : -                             :
+        :      /\       :                               :
+        :   Limpeza     :                               :
+        '==============='==============================='
+    
+* Identificando atores
+    - Ator: um papel de usuário, um outro sistema ou uma organização
+      externa que interagecom o sistema, solicitando, enviando ou
+      recebendo informações.
+    - Ator x usuário: nem todo ator precisa ser usuário, mas toda
+      classe de usuários deve ser um ator.
+    - Para identificar os atores faça perguntas como:
+        - Quem dispara os casos de uso?
+        - Quem fornece informações do sistema?
+        - Quem é interessado em um certo requisito?
+    
+    - Representações:
+        
+                Humano                   Não-humano
+                                .----------------------------.
+            ()          ()      | <<Medidor de temperatura>> |
+           /||\        /||\     | -                          |
+            /\          /\      | -                          |
+          Cliente    Vendedor   |                            |
+                                '----------------------------'
+
+* Identificando casos de uso
+    - Uma ator inicia uma interação com o sistema para contribuir com
+      o usuário.
+        
+    - Ex: pizzaria
+    
+        :    Atores     : Casos de uso                             :
+        :===============:==========================================:
+        :   Professor   : - Visualizar pedido                      :
+        :               : - Finalizar pedido                       :
+        :               : - Informar necessidade de                :
+        :               :   ingrediente                            :
+        :    Aluno      : - Registra pedido                        :
+        :               : - Informar pagamento do pedido           :
+        :   Cliente     :                                          :
+        :     ...       :                                          :
+    
+    - Se forem colocadas muitas funcionalidades nos casos de uso, partes
+      do sistema podem acabar não sendo usadas. Por isso, dentro da
+      metodologia crescente/incremental (ágil), pode-se começar 
+      resolvendo o requisito mais fundamental, e conforme o sistema é
+      utilizado, vai-se criando novos usos.
+    
+* Descrevendo casos de uso
+    - Caso de uso é fundamentalmente textual, porém pode ser
+      complementado com fluxogramas, diagrama de sequência, diagrams de
+      ativiadde, redes de Petri, etc.
+    - Formatos:
+        - Resumido: descreve sucintamente o caso de uso em um único
+          parágrafo, atendendo-se às questões principais.
+        - Informal: É feito um registro informal em vários prágrados de
+          forma a cobrir os sucessos e as falhasdas ações.
+        - Completo: descreve em detalhes o caso de uso e suas
+          informações adicionais.
+            Caso de Uso: nome       } 
+                Ator: ator          } 
+                Descrição           } Não tem informações sobre 
+                Pré-Condições:      } os aspectos internos da 
+                Pós-Condições:      } implemetação do sistema.
+                Fluxo principal:    } 
+                1. Ação do ator     } Descreve o fluxo padrão 
+                2. Ação do sistema  } do acontecimentos, se tudo
+                3. Ação do ator     } funcionar corretamente. 
+                4. Ação do sistema  } Uma variante é colocar 
+                ...                 } as informações em 2 colunas.
+                Fluxo alternativo:  } 
+                ...                 } Ações alternativas quando 
+                ...                 } ocorre alguma falha.
+    
+    - É recomendado elaborar o caso de uso sem descrever o funcionamento
+      inteno do sistema e questões de projeto.
+
+* Relacionamentos
+    - Entre atores: é possível haver herança entre os atores, para que 
+      um ator mais geral tenha todos os casos de uso e seu 'ator pai'.
+        
+                              ()          ()   
+                             /||\   ←    /||\  
+                              /\          /\   
+                             Caixa       Dono  
+    - Entre casos de uso:
+        
+                              Efetuar pedido               
+                              /            \               
+                <<includes>> /              \ <<extends>>  
+                            /                \             
+                    Registrar                Cadastrar     
+                    pagamento                produto       
+        
+        <<includes>>: fluxo OBRIGATÓRIO entre casos de uso
+        <<extends>>:  fluxo OPCIONAL entre casos de uso
+
+* Modelagem de processo de negócio
+    - Casos de uso também podem ser usadospara modelar processos de
+      negóciode uma organização.
+    - Nesse caso, os stakeholders são os acionistas, clientes, 
+      fornecedores, agências regulares, etc.
+    - Os atores são aqueles que interagemcom a organização do ponto de
+      vista externo.
