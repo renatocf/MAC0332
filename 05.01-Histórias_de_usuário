@@ -1,0 +1,87 @@
+Histórias de usuário
+======================
+
+* Forma de levantamento de requisitos criada no contexto de Programação
+  Extrema (XP, inventado por Kent Beck).
+* É mais informal, e objetiva ter um FEEDBACK constante e mais preciso
+  do desenvolvimento.
+
+* Todas as histórias de usuários são muito pequenos. * Chama-se a 
+  técnica de 3Cs:
+    - Cartão (ou post-it), um token físico dando uma forma tangível e 
+      durável ao que de outra forma só seria uma abstração.
+    - Conversa entra as várias partes interessadas (clientes, usuários,
+      desenvolvedores, testadores, product owner, etc.), em grande parte
+      verbal.
+    - Confirmação, definindo se o que foi confirmado foi alcançado.
+* A parte interessante dos 3Cs é que ele pode ser usado para pensar
+  nos testes automatizados de unidade.
+
+* Estrutura formal
+    - Mike Cohn sugeriu um formato, que foi largamente adotado.
+    - Formato: "Como um PAPEL, eu quero ALGO para que BENEFÍCIO"
+
+* Algumas configurações importantes:
+    - Os stakeholders/product owner escrevem as histórias
+    - Lembrar dos requisitos não-funcionais
+    - Deixar espao para a estimativa e prioridade
+    - Opcionamente inclua um identificador único (para fins de
+      rastreamento entre artefatos)
+    - Como a granularidade pode ser muito grande, é util que se crie um
+      sistema de prioridades (que pode mudar ao longo do tempo). Também
+      adiciona-se uma estimativa de tempo, calculada em PONTOS.
+
+* Planejamento
+    - Priorização: o cliente prioriza e as histórias são atendidas em
+      ordem de prioridade:
+        - Escala numérica
+        - Escala MoSCoW (Must Should Could Won't)
+        
+                        alta prioridade
+                        ^
+                        |≡ ≡ ≡ ≡ }   Cada iteração implementa os 
+                        |≡ ≡ ≡ ≡     itens de maior prioridade
+                     ↗  |========
+              Modelada  |-------- <- ==== Cada novo item de 
+              em maior  |========         trabaldo é priorizado
+              detalhe   |.------.         em qualquer tempo
+                        |'------'
+                        |.------.    Itens podem ser repriorizados
+                        ||      |    a qualquer tempo
+              Modelado  |'------'
+              em menor  |.------. -> Itens de trabalho podem
+              detalhe   ||      |    ser removidas a qualquer
+                    ↘   |'------'    momento
+                        | Itens de
+                        | trabalho
+                        ^
+                        baixa prioridade
+        
+        - Refatorações também podem entrar dentro das histórias,
+          principalmente se elas estiverem afetando diretamente no
+          desempenho do desenvolvimento. É necessário, porém, conversar
+          com ele para explicar a situação.
+
+    - Tarefas
+        - Histórias e usuário podem ser decompostas em tarefas de
+          desenvolvimento
+            - Entregáveis intermediários, facilita o acompanhamento, o
+              endentimento do que implementar e a divisão do trabalho em
+              equipe.
+                    
+                               |  TODO  |  DOING  |  DONE  |
+                    ===========|========|=========|========|
+                     History A |        |         |        |
+                    -----------|--------|---------|--------|
+                     History B |        |         |        |
+                    -----------|--------|---------|--------|
+                     History C |        |         |        |
+    
+    - Ferramentas online
+        - Pivotal Tracker
+        - Trello
+        - Ontime
+
+* Histórias de usuário x casos de uso
+    - Similaridades
+        - Ambos usam o vocabulário do usuário
