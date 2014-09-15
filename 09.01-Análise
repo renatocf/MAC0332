@@ -1,0 +1,135 @@
+Padrões de Análise
+====================
+
+* Melhorando a coesão
+    
+    .-------------------.       .--------------.    .---------------.
+    | Pessoa            |       | Pessoa       |    | Endereço      |
+    |===================|       |==============|----|===============|
+    | +nome             |       | +nome        |    | +nome         |
+    | +rua              |       '--------------'    | +rua          |
+    | +numero           |              |       \    | +numero       |
+    | +cidade           |  ==>         |        \   | +cidade       |
+    | +estado           |              |         \  | +estado       |
+    | +ddd              |              |          \ '---------------'
+    | +telefone         |   .-------------------.  .---------------.
+    | +rg               |   | RG                |  | Telefone      |
+    | +orgaoExpedidor   |   |===================|  |===============|
+    | +ufOrgaoExpedidor |   | +rg               |  | +ddd          |
+    '-------------------'   | +orgaoExpedidor   |  | +telefone     |
+                            | +ufOrgaoExpedidor |  '---------------'
+                            '-------------------'  
+
+* Classes de especificação
+
+    .---------------.               
+    | ObraLiterária |               
+    |===============|               .---------------.
+    | +isbn         | especificação | Livro         |
+    | +titulo       |---------------|===============|
+    | +autor        |               | +id           |
+    | +preco        |               '---------------'
+    '---------------'               
+
+* Quantidade com unidades
+    - Quantidades que não são simplesmente números
+    - Ex: peso de um livro (400 o quê?)
+    - Pode-se fixar uma unidade. Mas e se precisarmos ser mais
+      flexíveis?
+    - E para converter de uma para outra?
+    
+            .---------------.    .---------------.
+            | Livro         |    | Unidade       |
+            |===============|----|===============|
+            |               |    | +nome         |
+            |               |    | +fatorConvG   |
+            '---------------'    '---------------'
+            
+                                           ConvertePara
+                                             .-----.   .-----------.
+            .---------------.    .---------------. |-- | FatorConv |
+            | Livro         |    | Unidade       | |   '-----------'
+            |===============|----|===============|-'
+            |               |    | +nome         |
+            |               |    | +fatorConvG   |
+            '---------------'    '---------------'
+
+* Medidas
+    - Como representar várias medidas diferentes para um objeto?
+    - Ex: paciente em um hospital (Temperatura, Pressão, Glicose)
+    
+        - Solução trivial
+            .---------------.
+            | Paciente      |
+            |===============|
+            | +temperatura  |
+            | +pressão      |
+            | +glicose      |
+            '---------------'
+    
+        - Solução simples menos coesa (agrupa atributos ligados).
+          Adicionar medições exige recompilação. Só admite uma 
+          unidade para cada tipo de medição.
+            .---------------.    .---------------.
+            | Paciente      |    | Medição       |
+            |===============|----|===============|
+            |               |    | +temperatura  |
+            |               |    | +pressão      |
+            |               |    | +glicose      |
+            '---------------'    '---------------'
+        
+        - Solução mais abrangente, que pode perder informações
+            .---------------.    .---------------.
+            | Paciente      |    | Medição       |
+            |===============|----|===============|
+            |               |    | +valor        |
+            |               |    | +tipoTemp     | (campo aberto)
+            '---------------'    '---------------'
+    
+        - Solução melhor: medições têm tipos e estas, unidades
+            .----------.    .-----------.    .-----------.
+            | Paciente |    | Medição   |    | Unidade   |
+            |==========|----|===========|----|===========|
+            |          |    | +valor    |    |           |
+            |          |    | +tipoTemp |    |           |
+            '----------'    '-----------'    '-----------'
+                                  |               |
+                            .-----------.         |
+                            | Tipo      |         |
+                            |===========|---------'
+                            |           |
+                            '-----------'
+        
+        - Solução melhor ainda: medições têm tipos, e estas têm
+          algum tipo de unidade.
+          .----------.  .-----------.  .-----------.  .-------------.
+          | Paciente |  | Medição   |  | Unidade   |  | TipoUnidade |
+          |==========|--|===========|--|===========|--|=============|
+          |          |  | +valor    |  |           |  |             |
+          |          |  | +tipoTemp |  |           |  |             |
+          '----------'  '-----------'  '-----------'  '-------------'
+                              |                             |
+                        .-------------.                     |
+                        | TipoMedição |                     |
+                        |=============|---------------------'
+                        |             |
+                        '-------------'
+
+* Hierarquia organizacional
+    
+          .----------.        .-----------.         .-----------.
+          | Pais     |1   1..*| Estado    |1    1..*| Município |
+          |==========|/\------|===========|/\-------|===========|
+          |          |\/      | +valor    |\/       |           |
+          |          |        | +tipoTemp |         |           |
+          '----------'        '-----------'         '-----------'
+    
+    - E se tivermos também Região, Bairro, Distrito, Subregião, Comarca?
+    
+                          1.------.              1.------.
+              .-----------------. | pai   .------------. | pai
+              | ItemHierárquico | |       | Unidade    | |
+              |=================|-'*      |============|-'*
+              | nome            |1       *| nome       | 
+              |                 |---------|            |
+              '-----------------'         '------------'

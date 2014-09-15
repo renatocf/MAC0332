@@ -1,0 +1,14 @@
+Análise
+=========
+
+* Erros comuns
+    
+    - Uso do coletivo pelo item:
+        
+        | Vendedores | Biblioteca | HistóricoEscolar | Grade        |
+        | ========== | ========== | ================ | ============ |
+        | cod        | isbn       | aluno            | curso        |
+        | nome       | titulo     | disciplina       | disciplina   |
+        | salario    | numPags    | notaFinal        | cargaHorária |
+        | telefone   | tipoDeCapa | numFaltas        | numCreditos  |
+    

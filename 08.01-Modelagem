@@ -1,0 +1,177 @@
+Modelagem
+===========
+
+* Formas de criar categorias
+    
+    I) Atributo de classe   II) Atributo       III) Vetor de atributo
+        .------------.          .-----------.      .-----------------.
+        | Produto    |          | Produto   |      | Produto         |
+        |============|          |===========|      |=================|
+        | $categoria |          | categoria |      | categoria[0..*] |
+        | nome       |          | nome      |      | nome            |
+        |------------|          |-----------|      |-----------------|
+        '------------'          '-----------'      '-----------------'
+    
+    IV) Relação 1..* entre classes
+        .---------.     .---------------.
+        | Produto |     | Categoria     |
+        |=========|-----|===============|
+        | nome    |1   *| nomeCategoria |
+        |---------|     |---------------|
+        '---------'     '---------------'
+    
+    V) Relação *..* entre classes
+        .---------.     .---------------.
+        | Produto |     | Categoria     |
+        |=========|-----|===============|
+        | nome    |*   *| nomeCategoria |
+        |---------|     |---------------|
+        '---------'     '---------------'
+    
+    VI) Herança de produtos
+                                .---------.
+                                | Produto |
+                                |=========|
+                                | nome    |
+                                |---------|
+                                '---------'
+                                     △ 
+                                     |
+                 .-------------------|---------------.
+                 |                   |               |
+        .------------------. .---------------. .-------------.
+        | ProdutoCongelado | | ProdutoBebida | | ProdutoDoce |
+        |==================| |===============| |=============|
+        |------------------| |---------------| |-------------|
+        '------------------' '---------------' '-------------'
+    
+    VII) Desacoplamento de produto/categoria (1..*)
+    
+            .---------.         .---------.
+            | Produto |         | Produto |
+            |=========|---------|=========|
+            | nome    |1       *| nome    |
+            |---------|         |---------|
+            '---------'         '---------'
+                                     △ 
+                                     |
+                          .----------|---------.
+                          |          |         |
+                   .-----------. .--------. .------.
+                   | Congelado | | Bebida | | Doce |
+                   |===========| |========| |======|
+                   |-----------| |--------| |------|
+                   '-----------' '--------' '------'
+    
+    VIII) Desacoplamento de produto/categoria (*..*)
+    
+            .---------.         .---------.
+            | Produto |         | Produto |
+            |=========|---------|=========|
+            | nome    |1       *| nome    |
+            |---------|         |---------|
+            '---------'         '---------'
+                                     △ 
+                                     |
+                          .----------|---------.
+                          |          |         |
+                   .-----------. .--------. .------.
+                   | Congelado | | Bebida | | Doce |
+                   |===========| |========| |======|
+                   |-----------| |--------| |------|
+                   '-----------' '--------' '------'
+    
+    
+    IX) Strategy pattern para desacoplar método de cálculo de imposto
+    
+        .---------.     .---------.             .-------------------.
+        | Produto |     | Produto |             | EstratégiaImposto |
+        |=========|-----|=========|-------------|===================|
+        | nome    |1   *| nome    |*           *|                   |
+        |---------|     |---------|             |-------------------|
+        '---------'     '---------'             '-------------------'
+                            △                             △              
+                            |                             |
+                .-----------|---------.             .-----------.
+                |           |         |             |           |
+          .-----------. .--------. .------.   .----------. .-----------.
+          | Congelado | | Bebida | | Doce |   | %simples | | %composto |
+          |===========| |========| |======|   |==========| |===========|
+          |-----------| |--------| |------|   |----------| |-----------|
+          '-----------' '--------' '------'   '----------' '-----------'
+
+* Aspecto temporal da informação
+ 
+                        .---------.       .----------.
+                        | Cliente |1     *| Endereço |
+                        |=========|-------|==========|
+                        |---------|   :   |----------|
+                        '---------'   :   '----------'
+                                      :
+                                .------------.
+                                | Residência |
+                                |============|
+                                | dtIni      |
+                                | dtFim      |
+                                |------------|
+                                '------------'
+
+* Princípios de modelagem
+    
+    - Reduzir o gap semântivo (a estrutura do software deve refletir a
+      estrutura do domínio).
+    
+    - Modelos não são certos ou errados, apenas são mais ou menos
+      apropriados.
+    
+    - KISS (Keep It Simple, Stupid!)
+        - Menos é mais!
+        - Vale a ena investir tempo simplificando o modelo
+        - Complexidade desnecessária deve ser evitada
+        - Termo surgiu na Marinha Americada em 1960 e é lergamente 
+          usado em várias áreas
+            - Um jato deveria ser consertado por um mecânico mediano em
+              campo inimido, sob combate, com um punhado de ferramentas.
+        - Mas o princípio é anterior
+            - "Simplicity is the ultimate sophistication"
+              (Leornardo da Vinci)
+            - "It seems that perfection is reached not when there is
+              nothing left to add, but when there is nothing left to
+              take away" (Antoine de Saint Exupéry)
+        - Ponto de atenção
+            - "Make everything as simple as possible, but not simpler"
+              (Albert Einstein)
+    
+    - DRY (Don't Repeat Yourself)
+        - DRY vs WET (Write Everything Twice)
+    
+    - YAGNI (You ain't gonna need it)
+        - Evitar o over-engeneering
+        - Sempre implementar funcionalidades quando você realmente
+          precisa delas, nunca quando você acabou de prever que você
+          vai precisar delas.
+        - "do que simplest thing that ciuld possible work, because 
+          you aren't gonna need it"
+    
+    - Coesão
+        - Indica o quanto os elementos que compõe um módulo são
+          relacionados
+        - Alta coesão
+            - Facilidade de manter, testar, reusar, entender
+              um pedaço de código
+
+    - Acoplamento
+        - Acoplamento mede o quanto cada módulo depende dos outros 
+          módulos.
+        - É inversamente relacionada com a coesão.
+        - Encapsulamento é uma maneirade evitar alto acoplamento.
+          (Information Hiding)
+
+* Na prática
+    - Conceitos não devem ter atributos de outros conceitos
+      (Ex: automóvel com atributo CPF do propretário)
+    - Atributos não devem ser redundantes com relacionamentos
+      (Ex: venda com atributo listaDeItens)
+    - Quando alguns atributos podem ser nulos dependendo do valor 
+      de outros atributos
+      (Ex: alerta de baixa coesão)

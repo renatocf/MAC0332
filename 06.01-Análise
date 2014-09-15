@@ -1,0 +1,110 @@
+Análise
+=========
+
+* Etapas do desenvolvimento de software
+
+                           | Tanto no ciclo em cascata quanto com o    
+      Levantamento de      | uso de métodos ágeis, seguem-se muitas 
+        requisitos         | dessas etapas.                            
+            ↓              |                                           
+         Análise           | Depois do levantamento de requisitos, a   
+            ↓              | análise é a etapa seguinte. Ela usa o 
+         Projeto           | conhecimento dos requisitos para          
+            ↓              | TRANSFORMÁ-LOS em um modelo conceitual 
+       Implementação       | do software.                              
+            ↓              |                                           
+          Testes           | O modelo é uma representação SIMPLIFICADA 
+            ↓              | e ABSTRATA de fenômeno ou situação 
+        Implantação        | concreta, e que serve de referência para 
+            ↓              | a obsercação, estudo ou análise. 
+    Manutenção/evolução    |                                           
+            ↓              | A abstração é ato de separar elementos 
+         Retirada          | de uma totalidade, e que só mentalmente 
+                           | podem subsistir dora dessa totalidade.    
+
+* Ex:
+    
+    
+     Realidade                      : Representação
+    ================================:===================================
+                                    :  
+      Aluno                         :               Sensor
+      - NUSP       | - Skype        :  disciplina   .-----.
+      - Nome       | - Altura       :  .--------.   |     |
+      - Sobrenome  | - Peso         :  |        |   '-----'
+      - Endereço   | - Cor cabelo   :  |        |      |
+      - TelR       | - Idade        :  '--------'      |
+      - TelCom     | - Peso         :      |    Turma  |  Aluno
+      - TelCel     | - Roupa atual  :      |   .-----. | .------.
+      - E-mail     |                :      '---|     |-' | NUSP |
+                                    :          |     |---| Nome |
+                                    :          '-----'   | Foto |
+                                    :                    '------'
+
+* Análise orientada a objetos
+    - Usa diagrama de classes UML, de forma geral
+                    
+       .-----------.
+       | Nome      |        Associação      generalização
+       |===========|        -------------   -----------|>
+       | atributos |        Dependência     realização
+       |-----------|        - - - - - - >   - - - - - -|>
+       | operações |        Composição      Agregação
+       '-----------'        ◆------------   ◇------------
+       Classe (class)
+    
+    - Uma associação é puramente haver algum tipo de interrelação
+      entre as classes.
+    - Generalização mostra as relações de herança.
+    - Uma agregação é mais fraca, e apenas indica que alguém uma
+      classe faz parte da outra.
+    - Uma composição é mais forte, e indica que a classe que tem
+      a outra dentro não "sobrevive" sem a outra.
+
+    - Ex:
+      1) Levantar substantivo
+      - político (ator?)
+      - sistema (não é útil)
+      - gerenciamento (verbo)
+      - secretária (ator?)
+      - dias (parte de data)
+      - manhã (calculada)
+      - agenda (calculado)
+      - [tarefa]
+      - aniversariantes → [Pessoa]
+      - [compromisso]
+      - data <-----.
+      - hora ------|
+      - duração ---|
+      - local -----|
+      - descrição -|
+      - participante → [Pessoa]
+      - traje (classe? atributo (livre/hard-coded)?)
+      - esporte (valor) -^
+      - social (valor) --'
+    
+    
+      .-----------.              .-------------.    .-----------------.
+      | Pessoa    |              | Compromisso |    | TipoCompromisso |
+      |===========|              |=============|    |=================|
+      | nome      | participa ▶  | data        |*  1| nome            |
+      | data_nasc |--------------| hora        |----|-----------------|
+      |-----------|*            *| duração     |    '-----------------'
+      '-----------'              |             |    
+           △                     | traje {     |
+           |                     |   esporte,  |
+      .-----------.              |   informal, |
+      | Assessor  |              |   social,   |
+      |===========|              |   black-tie |
+      |           |              | }           |
+      |-----------|              |-------------|
+      |           |              '-------------'
+      '-----------'                   * | realizado_em
+           |                       0..1 |
+      .-----------.               .-----------.
+      | Tarefa    |               | Local     |
+      |===========|               |===========|
+      |           |               |           |
+      |-----------|               |-----------|
+      |           |               |           |
+      '-----------'               '-----------'
