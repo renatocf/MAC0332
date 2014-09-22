@@ -1,0 +1,60 @@
+Padrões de Análise
+====================
+
+* Junção de objetos
+    - Como podemos reunir dois objetos que foram cadastrados
+      distintamente, mas representam a mesma entidade?
+    - Solução simples: modificar imediatamente no BD
+    
+    - Padrões de análise:
+        
+* Copiar e substituir
+    - O analista define, para cada conceito, atributo e associação, o
+      que deve acontecer durante a cópia. Exs:
+        - Valores são sempre substituídos pelos mais recentes
+        - Os valores de um atributo são somados (ex: saldo)
+        - Apenas o maior valor é mantido
+        - O endereço mais recente é armazenado
+    - Após a cópia, a instância copiada é destruída
+        - Junto com as referências a ela, que devem ser redirecionadas.
+    
+    - Esse método tem um problema: se colocarmos um método de junção
+      dentro de uma classe, pode ser que percamos informações de classes
+      referenciadas pela junção ou que se referenciam a ela.
+
+* Sucessor (superseding)
+    - Quando se pretende manter o objeto original
+    - Manter as estruturas originais pode ser importante para fins de
+      registro.
+        - Ex: Departamentos venda e marketing são unidos em um novo.
+        - Departamentos originais são mantidos.
+        - Mas marcados como inativos.
+        - O novo departamento marcado como sucessor.
+    
+                                   .-----------------.
+                    superestrutura ◆                 |
+                       .-------------------------.   |
+                       | EstruturaOrganizacional |   |
+                       |=========================|---' 
+                       |                         | estrutura
+              sucessor |-------------------------|
+                  .----|                         |
+                  |    '-------------------------'
+                  |         | sucedido
+                  '---------'
+    
+    - Justifica bem o uso de etters e setters, porque eles poderiam
+      ver se oobjeto é um proxy.
+
+* Essência e aparência
+    - Mantém algum objeto sendo a essência, aparecendo unificado
+      para alguns usuários. Para outros, ainda podem existir os
+      objetos separados.
+
+* Desfazendo uma junção
+    - Cada padrão tem dificuldades
+
+* Intervalo
+    - Como intervalos são bem comuns em várias ocasiões, seria
+      interessante mantê-los numa classe unificada, pois várias
+      operações de intervalos são comuns, e seria melhor usá-las.

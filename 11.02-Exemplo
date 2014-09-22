@@ -1,0 +1,41 @@
+Design
+========
+
+          Análise                             Design
+        .----------.                  .------------------------.
+        | Aluno    |                  | Aluno                  |
+        |==========|                  |========================|
+        | cod      |    conversão     | - cod : int            |
+        | nome     |  ------------->  | - nome : String        |
+        | email    |  + tipos         | - email : String       |
+        | dat_nasc |  + visibilidade  | - dat_nasc : Date      |
+        |----------|                  | - turmas : List<Turma> | <--.
+        '----------'                  |------------------------|    |
+             |*                       | + getters & setters    |    |
+             |  alternativas >        '------------------------'    |
+             |*                                                     |
+        .----------.              .----------------------------.    |
+        | Turma    |              | Matricula                  |    |
+        |==========|              |============================|    |
+        | cod      |              | - aluno                    |    |
+        | horario  |              | - turma                    | <--|
+        |----------|              |----------------------------|    |
+        '----------'              | + getAluno(Turmas) : Aluno |    |
+             |                    | + getTurma(Alunos) : Turma |    |
+       .------------.             '----------------------------'    |
+       | Disciplina |                                               |
+       |============|                 .------------------------.    |
+       |------------|                 | Turma                  |    |
+       '------------'                 |========================|    |
+                                      | - cod                  |    |
+                                      | - horario              |    |
+                                      | - alunos : List<Aluno> | <--'
+                                      |------------------------|
+                                      | + getters & setters    |
+                                      '------------------------'
+
+* Tipos: da linguagem a ser usada na programação
+* Visibilidade: público   (+), em qualquer lugar;
+                pacote    ( ), só no pacote;
+                protegido (#), só na hierarquia de classe;
+                privado   (-), só dentro da classe.

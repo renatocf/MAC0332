@@ -1,0 +1,143 @@
+Design
+========
+
+* Definições de dicionário
+    - Aurélio
+        1. Concepção de um prjeto ou modelo, planejamento
+        2. O produto desse planejamento.
+    - Houaiss
+        1. A concepção de um produto (máquina, utensílio, mobiliário,
+           embalagem, publicação, etc), especialmente no que se 
+           refere à sua forma física e funcionalidade.
+        2. O produto desta concepção.
+
+    - Wikipedia
+        - Design (em alguns casos projeto) é um esforço criativo
+          relacionado à sua configuração, elaboração e especificação
+          de um artefato. Esse esfprçonormalmente é orientado por uma
+          inteção ou objetivo, ou paraa solução de um problema.
+
+* Até o momento, já vimos 3 passsos:
+    - Requisitos        (arquiteto)  } Segundo a concepção vista nas
+    - Modelagem         (arquiteto)  } definições, tudo poderia ser
+    - Design de classes (engenheiro) } chamado de 'design'.
+      Design estrutural
+      ^^^^^^^^^^^^^^^^^-- Estão envolvidos com a passagem do plano
+                          conceitual para a PROGRAMAÇÃO (estrutura
+                          do código para ser implementada).
+
+* Análise x design
+    - Análise: fazer a coisa certa
+        - Foco no entendimento do problema (o que?)
+        - Análise de requisitos
+        - ANálde do domínio
+    - Design: fazer certo a coisa
+        - Foco no endedimento da solução (como?)
+        - Arquitetura
+        - Estrutura
+        - Infraestrutura
+        - Perto do código real
+        - Operações e atributos
+        - Ciclo de vida dos objetos
+
+* Há vários conceitos relacionados a um bom design
+    - Atender aos requisitos funcionais e não funcionais
+      da aplicação da melor maneira.
+    - Geralmente, tem-se maior atenção aos requisitos não funcionais,
+      durante esta fase.
+    - Em geral, o requisito não funcional MAIS IMPORTANTE é a
+      Manutenibilidade (capacidade de evoluir).
+    - As mudanças são inevitáveis e frequentes. Os bons softwares são
+      fácei de serem mudados, e os métodos ágeis aceitam "com prazer"
+      mudanças nos requisitos mesmo quando aparecem tardiamente.
+    - Com o passar do tempo, programas passam por uma 'degradação'
+      (também chamada de 'deteriorização' ou 'apodrecimento'), em
+      que mudanças ("gambiarras") feitas no código para resolver um
+      problema rapidamente podem se acumular, até que o software se
+      torna INSUSTENTÁVEL. 
+    - Os métodos ágeis tentam, ao máximo, evitar os problemas de
+      mudanças e modificações: refatorações, pair programming e testes 
+      reduzem a introdução de novos bugs. Eles usam também tabelas
+      com a 'dívida técnica' (as "gambiarras" feitas no código), a 
+      serem pagas no futuro, para evitar a degradação.
+
+* Definições
+    - Encapsulamento: 
+        - É um mecanismo usado para ocultar os dados, a estrutura 
+          interna e os detalhes de implementaçãode algum elemento,
+          como um objeto ou subsistema.
+    
+    - Acoplamento
+        - É uma medida de quãofortemetne umelemento está conectado a,
+          tem conhecimento de, ou depende de outros elementos
+        - Princípio do baixo acoplamento (low coupling)
+    
+    - Coesão
+        - Coesão mede o grau de conectividade entre os elementos de um
+          mesmo módulo, classe ou objeto. Cada classe deve executar um
+          conjunto bastante específico de ações intimamente
+          relacionadas.
+        - Princípio da alta coesão (high cohesion).
+    
+    - Interfaces
+        - Codificar para uma interface ao invés de codificar para uma
+          implementação torna o seu software mais fácil de ser estendido
+          e facilida a testabilidade.
+        - Código funcionará com toas as implementações da interface:
+          inclusive aquelas que não foram criadas.
+        - OCP: Open/Closed Principle
+    
+    - Definição de responsabilidades
+        - Métodos ágeis aceitam "com prazer" mudanças nos requisitos
+          mesmo quando aparecen tardiamente.
+        - Cada classe deve ter uma única razão para mudar, uma única
+          responsabilidade.
+        - SRP: Single Responsability Principle
+
+    - DRY (Don't Repeat Yourself)
+        - Evite código duplicado abstraindo coisas que são comuns e
+          as colocando em um local único.
+        - Um requisito, um lugar.
+
+    - Liskov Substitution Principle
+        - Subtipos devem ser subistituíveis por seu tipo básico.
+        - Uso correto de herança: deve ser possível substituir a
+          subclasse pela classe base sem que haja efeitos colaterais.
+
+    - Composição
+        - Um objeto composto de outros objetos torna-se "dono" deles.
+        - Quando o objeto é destruído, todas as suas partes também são
+          (controle do ciclo de vida).
+
+    - Herança
+        - Deve ser utilizada para explorar o polimorfismo
+        - Favoreça delegação, composição, agregação contra herança.
+
+* "Maus cheiros" (bad smells) de design
+    
+    - Rigidez
+        - Difícil de mudar.
+        - Efeito dominó.
+    
+    - Fragilidade
+        - Quebraem muitos ugares napresença de mudanças.
+        - Efeito borboleta-maremoto (uma borboleta bate uma asa e 
+          gera um maremoto do outro lado do mundo).
+    
+    - Imobilidade
+        - Baixo grau de reúso.
+        - Efeito banana-gorila (para trazer a banana, leva-se o gorila).
+    
+    - Viscosidade
+        - Design não preparado para mudanças.
+        - Fácil fazer a coisa errada e difícil fazer a coisa certa.
+    
+    - Complexidade desnecessária
+    
+    - Repetição desnecessária
+
+* Em alguns casos, podemos querer inserir trechos de código em todas
+  as classes ou métodos. Não há suporte para tratar esses casos na
+  orientação a objetos tradiciona. Para isso, surgiu a Aspect Oriented
+  Development (AOD), que define ASPECTOS como sendo trechos de código
+  a inseridos dentro de classes antes da compilação.
