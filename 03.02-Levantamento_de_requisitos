@@ -27,13 +27,11 @@ REQUISITOS
         - Experimento simulado
     
     - Especificação 
-        - Registro dos requisitos de forma persistente e prganizada, de
+        - Registro dos requisitos de forma persistente e organizada, de
           modo a facilitar a comunicação e o gerenciamento de mudanças
     
     - Validação: confirmação se os requisitos realmente atendem ao que
       está sendo pedido
-    
-    - 
 
 * Requisitos não-funcionais segundo ISO 9126
     - Confiabilidade, corretude, manutenabilidade, performance, 
@@ -41,7 +39,7 @@ REQUISITOS
       reusabilidade, compatibilidade, portabilidade, segurança, etc.
     - Onde cada um dos requisitos é crucial? Onde é dispensável?
       Como obter no software?
-    - Qual o requisito não-funcioanl amis importante para cada um dos
+    - Qual o requisito não-funcioanal mais importante para cada um dos
       tipos de sistemas abaixo?
         - Sistema interativo, sistema em lote, sistema de tempo real, 
           sistema Web, sistema bancário, sitemas de missão crítica
@@ -72,7 +70,7 @@ REQUISITOS
 * Entendimento do domínio de aplicação
     - É importante usar a terminologia correta ao se comunicar com
       clientes e usuários.
-    - Emprego de palavras inapropriadas pode lear a desentendimento.
-    - Criação de um GLOSSÁIO com uma lista de termos técnicos utilizados
+    - Emprego de palavras inapropriadas pode levar a desentendimentos.
+    - Criação de um GLOSSÁRIO com uma lista de termos técnicos utilizados
       na área em questão.
     - Criação de um mapa conceitual.
