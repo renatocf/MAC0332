@@ -118,7 +118,7 @@ Modelagem
 
 * Princípios de modelagem
     
-    - Reduzir o gap semântivo (a estrutura do software deve refletir a
+    - Reduzir o gap semântico (a estrutura do software deve refletir a
       estrutura do domínio).
     
     - Modelos não são certos ou errados, apenas são mais ou menos
@@ -131,7 +131,7 @@ Modelagem
         - Termo surgiu na Marinha Americada em 1960 e é lergamente 
           usado em várias áreas
             - Um jato deveria ser consertado por um mecânico mediano em
-              campo inimido, sob combate, com um punhado de ferramentas.
+              campo inimigo, sob combate, com um punhado de ferramentas.
         - Mas o princípio é anterior
             - "Simplicity is the ultimate sophistication"
               (Leornardo da Vinci)
@@ -150,7 +150,7 @@ Modelagem
         - Sempre implementar funcionalidades quando você realmente
           precisa delas, nunca quando você acabou de prever que você
           vai precisar delas.
-        - "do que simplest thing that ciuld possible work, because 
+        - "do que simplest thing that could possible work, because 
           you aren't gonna need it"
     
     - Coesão
@@ -164,7 +164,7 @@ Modelagem
         - Acoplamento mede o quanto cada módulo depende dos outros 
           módulos.
         - É inversamente relacionada com a coesão.
-        - Encapsulamento é uma maneirade evitar alto acoplamento.
+        - Encapsulamento é uma maneira de evitar alto acoplamento.
           (Information Hiding)
 
 * Na prática
