@@ -36,8 +36,8 @@ Programação Orientada a Objetos
             '-----------'   '------------'
     
     - Modelagem
-        - Com o objetono mundo real, cria-se uma classe conceitual, com
-          os atrivutos e aões relevantes. Cria-se, então,umaclasse de
+        - Com o objeto no mundo real, cria-se uma classe conceitual, com
+          os atributos e ações relevantes. Cria-se, então, uma classe de
           software, que apresenta a implementação do conceito. 
         - Cada classe pode ser INSTANCIADA, criando novos objetos
           daquela classe.
@@ -117,9 +117,9 @@ Programação Orientada a Objetos
             class Motorista   : class Carro            : POO-MER
             {                 : {                      : Viola o encap-
               int id;         :   String placa;        : sulamento (mo-
-              String nome;    :   String cor;          : difica Motoris-
-            }                 :   int idMotorisca;     : ta leva a mudar
-                              : }                      : Carro)
+              String nome;    :   String cor;          : dificar Moto-
+            }                 :   int idMotorista;     : rista leva a 
+                              : }                      : mudar Carro)
            -------------------:------------------------:----------------
             class Motorista   : class Carro            : POO puro
             {                 : {                      : Não viola mais
@@ -131,8 +131,8 @@ Programação Orientada a Objetos
 * Herança
     - Forma de usar código,criando uma hierarquia de classes
     - Pode ser simples (um único pai) ou múltiplo (vários pais)
-    - Herança múltipla geralemente não é implementada, porque é
-      um problema.
+    - Herança múltipla geralmente não é implementada, porque
+      gera problemas graves.
         
                  class A       :  class F1 class F2
                     ^          :      ^       ^
@@ -172,21 +172,24 @@ Programação Orientada a Objetos
                                         { -----    -----    ---
     
     - Exemplo:
-
-                           Figura
-                           ================
-                           ----------------
-                           preencher(Cor c)
+                         .------------------.
+                         | Figura           |
+                         |==================|
+                         |------------------|
+                         | preencher(Cor c) |
+                         '------------------'
                                    ^
                                    |        
              .____________________/ \___________________.
              |                    `|´                   |
              ^                     ^                    ^
-      Círculo              Quadrado             Triângulo
-      ================     ================     ================
-      ----------------     ----------------     ----------------
-      preencher(Cor c)     preencher(Cor c)     preencher(Cor c)
-        
+    .------------------. .------------------. .------------------.
+    | Círculo          | | Quadrado         | | Triângulo        |
+    |==================| |==================| |==================|
+    |------------------| |------------------| |------------------|
+    | preencher(Cor c) | | preencher(Cor c) | | preencher(Cor c) |
+    '------------------' '------------------' '------------------'
+    
         metodo(Figura f) {    : Triangulo t = new Triangulo();
             ...               : metodo(t);
             f.preencher(cor); : // Esse ponto se torna um PONTO DE
@@ -197,7 +200,7 @@ Programação Orientada a Objetos
                               : // super classe.
 
 * Operações e classes abstratas
-    - Uma classe abstrata não pode instancir objetos.
+    - Uma classe abstrata não pode instanciar objetos.
     - Tem alguma operação não implementada (que é sobrecarregada pelas
       subclasses).
     - Serve basicamente para o polimorfismo.
