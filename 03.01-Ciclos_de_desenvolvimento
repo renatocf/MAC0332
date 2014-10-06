@@ -10,7 +10,7 @@ CICLOS DE DESENVOLVIMENTO
     
     - Etapas do ciclo em cascata
         - Levantamento   || O processo tem vantagens de ter
-          de requisitos  || uma visão do todo oantes de 
+          de requisitos  || uma visão do todo antes de 
         - Análise        || começar a próxima etapa. O 
         - Projeto        || acompanhamento é mais simples,
         - Construção     || e é possível fazer especializações
@@ -21,7 +21,7 @@ CICLOS DE DESENVOLVIMENTO
 * Ciclo iterativo
     - Métodos ágeis
     - Funciona na forma de uma espiral ascendente, com ciclos menores de
-      desenvolvimento que repretem o processoem cascata várias vezes. A
+      desenvolvimento que repetem o processo em cascata várias vezes. A
       cada iteração, novas funcionalidades são adicionadas.
     
                     .----------------------------------.
