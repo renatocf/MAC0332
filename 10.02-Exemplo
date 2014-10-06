@@ -2,14 +2,11 @@ Exemplo de Análise
 ====================
 
     Um supermercado quer controlar suas vendas. Precisa saber seus
-produtos, fornecedores, promoções, vendas e estoque. Cda estoque
-armazena produtos (precisa saquel qa quanr.) e precisa saber as
+produtos, fornecedores, promoções, vendas e estoque. Cada estoque
+armazena produtos (precisa saber qual quantidade) e precisa saber as
 movimentações entre os estoques. As promoções podem ser do tipo 
 'compre X, leve Y', 'compre mais de R$X e ganhe R$Y de desconto',
 'desconto individual de produto' e 'desconto de categoria de produto'.
-
-    
-    
     
   .-------.         .---------.    .-----------.  .------------. .------.
   | Venda |*       *| Produto |*  *| Categoria |  | Percentual | | Fixo |  
