@@ -43,8 +43,8 @@ Padrões de Análise
                   |         | sucedido
                   '---------'
     
-    - Justifica bem o uso de etters e setters, porque eles poderiam
-      ver se oobjeto é um proxy.
+    - Justifica bem o uso de getters e setters, porque eles poderiam
+      ver se o objeto é um proxy.
 
 * Essência e aparência
     - Mantém algum objeto sendo a essência, aparecendo unificado
