@@ -31,7 +31,7 @@ Casos de uso de levantamentos de requisito
     
 * Identificando atores
     - Ator: um papel de usuário, um outro sistema ou uma organização
-      externa que interagecom o sistema, solicitando, enviando ou
+      externa que interage com o sistema, solicitando, enviando ou
       recebendo informações.
     - Ator x usuário: nem todo ator precisa ser usuário, mas toda
       classe de usuários deve ser um ator.
@@ -72,11 +72,11 @@ Casos de uso de levantamentos de requisito
       metodologia crescente/incremental (ágil), pode-se começar 
       resolvendo o requisito mais fundamental, e conforme o sistema é
       utilizado, vai-se criando novos usos.
-    
+
 * Descrevendo casos de uso
     - Caso de uso é fundamentalmente textual, porém pode ser
-      complementado com fluxogramas, diagrama de sequência, diagrams de
-      ativiadde, redes de Petri, etc.
+      complementado com fluxogramas, diagrama de sequência, diagramas de
+      atividade, redes de Petri, etc.
     - Formatos:
         - Resumido: descreve sucintamente o caso de uso em um único
           parágrafo, atendendo-se às questões principais.
@@ -123,8 +123,8 @@ Casos de uso de levantamentos de requisito
         <<extends>>:  fluxo OPCIONAL entre casos de uso
 
 * Modelagem de processo de negócio
-    - Casos de uso também podem ser usadospara modelar processos de
-      negóciode uma organização.
+    - Casos de uso também podem ser usados para modelar processos de
+      negócio de uma organização.
     - Nesse caso, os stakeholders são os acionistas, clientes, 
       fornecedores, agências regulares, etc.
     - Os atores são aqueles que interagemcom a organização do ponto de
