@@ -30,7 +30,7 @@ Design
     - Análise: fazer a coisa certa
         - Foco no entendimento do problema (o que?)
         - Análise de requisitos
-        - ANálde do domínio
+        - Análise do domínio
     - Design: fazer certo a coisa
         - Foco no endedimento da solução (como?)
         - Arquitetura
@@ -42,13 +42,13 @@ Design
 
 * Há vários conceitos relacionados a um bom design
     - Atender aos requisitos funcionais e não funcionais
-      da aplicação da melor maneira.
+      da aplicação da melhor maneira.
     - Geralmente, tem-se maior atenção aos requisitos não funcionais,
       durante esta fase.
     - Em geral, o requisito não funcional MAIS IMPORTANTE é a
       Manutenibilidade (capacidade de evoluir).
     - As mudanças são inevitáveis e frequentes. Os bons softwares são
-      fácei de serem mudados, e os métodos ágeis aceitam "com prazer"
+      fáceis de serem mudados, e os métodos ágeis aceitam "com prazer"
       mudanças nos requisitos mesmo quando aparecem tardiamente.
     - Com o passar do tempo, programas passam por uma 'degradação'
       (também chamada de 'deteriorização' ou 'apodrecimento'), em
@@ -83,13 +83,13 @@ Design
         - Codificar para uma interface ao invés de codificar para uma
           implementação torna o seu software mais fácil de ser estendido
           e facilida a testabilidade.
-        - Código funcionará com toas as implementações da interface:
+        - Código funcionará com todas as implementações da interface:
           inclusive aquelas que não foram criadas.
         - OCP: Open/Closed Principle
     
     - Definição de responsabilidades
         - Métodos ágeis aceitam "com prazer" mudanças nos requisitos
-          mesmo quando aparecen tardiamente.
+          mesmo quando aparecem tardiamente.
         - Cada classe deve ter uma única razão para mudar, uma única
           responsabilidade.
         - SRP: Single Responsability Principle
@@ -120,12 +120,12 @@ Design
         - Efeito dominó.
     
     - Fragilidade
-        - Quebraem muitos ugares napresença de mudanças.
+        - Quebra em muitos lugares na presença de mudanças.
         - Efeito borboleta-maremoto (uma borboleta bate uma asa e 
           gera um maremoto do outro lado do mundo).
     
     - Imobilidade
-        - Baixo grau de reúso.
+        - Baixo grau de reuso.
         - Efeito banana-gorila (para trazer a banana, leva-se o gorila).
     
     - Viscosidade
@@ -138,6 +138,6 @@ Design
 
 * Em alguns casos, podemos querer inserir trechos de código em todas
   as classes ou métodos. Não há suporte para tratar esses casos na
-  orientação a objetos tradiciona. Para isso, surgiu a Aspect Oriented
+  orientação a objetos tradicional. Para isso, surgiu a Aspect Oriented
   Development (AOD), que define ASPECTOS como sendo trechos de código
   a inseridos dentro de classes antes da compilação.
